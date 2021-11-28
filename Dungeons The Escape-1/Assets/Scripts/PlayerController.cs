@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     //component references
     private Animator anim;
     private Rigidbody2D rb;
-    private Collider2D playerCollider;
+    private CapsuleCollider2D playerCollider;
+    private BoxCollider2D playerFeetCollider; //to prevent wall jumping
 
     // Using Start() for intialization
     void Start()
@@ -27,8 +28,9 @@ public class PlayerController : MonoBehaviour
         //Setting rigidbody
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        playerCollider = GetComponent<Collider2D>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
         playerStartGravity = rb.gravityScale;
+        playerFeetCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -63,7 +65,7 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {   
         
-        bool isTouchingGround = playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        bool isTouchingGround = playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
         //Jump if space/jump key is pressed and player is on ground (to prevent double jumpping)
         if(Input.GetButtonDown("Jump") && isTouchingGround)
@@ -77,7 +79,7 @@ public class PlayerController : MonoBehaviour
     private void ClimbLadder()
     {
         
-        bool isTouchingLadder = playerCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
+        bool isTouchingLadder = playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
 
         if(!isTouchingLadder)
         {
