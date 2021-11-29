@@ -103,11 +103,12 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsClimbing", playerHasVertSpeed);
     }
 
+    //Death Function
     private void Death()
     {
-        bool collidedWithEnemy = playerCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"));
+        bool collidedWithObstacle = playerCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Obstacles"));
 
-        if(collidedWithEnemy)
+        if(collidedWithObstacle)
         {
             isAlive = false;
             anim.SetTrigger("Die");
