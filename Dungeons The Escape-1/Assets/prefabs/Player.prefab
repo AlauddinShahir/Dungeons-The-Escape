@@ -156,9 +156,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  jumpSpeed: 28
+  jumpSpeed: 23
   climbSpeed: 5
-  deathFlick: {x: 15, y: 15}
+  deathFlick: {x: 25, y: 25}
 --- !u!61 &255357976
 BoxCollider2D:
   m_ObjectHideFlags: 0

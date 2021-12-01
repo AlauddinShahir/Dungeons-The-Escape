@@ -17,7 +17,7 @@ TagManager:
   - Background
   - Enemy
   - Obstacles
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2165027411
+    locked: 0
+  - name: Interactables
+    uniqueID: 791683601
     locked: 0
