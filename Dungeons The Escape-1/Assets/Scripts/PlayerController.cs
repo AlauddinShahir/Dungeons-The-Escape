@@ -108,12 +108,13 @@ public class PlayerController : MonoBehaviour
     {
         bool collidedWithObstacle = playerCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Obstacles"));
 
-        if(collidedWithObstacle)
+        if(collidedWithObstacle) //if player collides with enemy or obstacle, trigger death animation and change isAlive state
         {
             isAlive = false;
             anim.SetTrigger("Die");
             rb.velocity = deathFlick;
 
+            FindObjectOfType<GameManager>().PlayerDeath(); //Call the Player Death function from Game Manager
         }
     }
 

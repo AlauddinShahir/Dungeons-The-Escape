@@ -6,8 +6,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject endCanvas;
     public void StartGame()
     {
-        gameObject.SetActive(false);
-        Time.timeScale = 1;   
+        SceneManager.LoadScene(1);
     }
 
     //When player collides with EndSensor at last level of the game, show Game End screen
