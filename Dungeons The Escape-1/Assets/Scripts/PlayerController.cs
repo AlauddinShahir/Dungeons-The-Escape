@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float runSpeed = 5.0f;
     [SerializeField] float jumpSpeed = 5.0f;
     [SerializeField] float climbSpeed = 5.0f;
+    [SerializeField] AudioClip jump;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] Vector2 deathFlick = new Vector2(250f, 250f);
     private float horizontalInput;
     private float verticalInput;
@@ -76,6 +78,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
             rb.velocity += jumpVelocity;
+            audioSource.PlayOneShot(jump);
         }
     }
 

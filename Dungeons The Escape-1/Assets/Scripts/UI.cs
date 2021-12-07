@@ -17,6 +17,6 @@ public class UI : MonoBehaviour
     //Restart Game when, Restart Button is pressed at last level
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        FindObjectOfType<GameManager>().RestartGame();
     }
 }

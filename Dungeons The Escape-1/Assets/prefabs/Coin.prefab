@@ -241,3 +241,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpValue: 10
   pickupSFX: {fileID: 8300000, guid: d040819987cc71542a2e31d253475fdd, type: 3}
+  playerPos: {fileID: 4059437473796272143, guid: 46ad647843a69364d9f1355415ad6b42, type: 3}

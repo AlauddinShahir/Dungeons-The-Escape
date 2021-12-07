@@ -12,6 +12,7 @@ public class NextLevel : MonoBehaviour
     {
         StartCoroutine("LoadNextLevel");
         Destroy(other.gameObject);
+        FindObjectOfType<PickupPersistance>().DestroyOnNextLevel();
     }
 
     IEnumerator LoadNextLevel()
